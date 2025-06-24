@@ -157,6 +157,34 @@
             gap: 1rem;
             margin-top: 2rem;
             justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 1rem;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        .qr-text {
+            text-align: center;
+            color: var(--dark-blue);
+            font-weight: 500;
+            max-width: 250px;
         }
         
         footer {
@@ -243,6 +271,11 @@
                     <a href="https://disk.yandex.ru/d/LlxCKwoC6ohahw" class="btn" id="downloadAndroidBtn" target="_blank">
                         <i class="fas fa-mobile-alt"></i> Скачать для Android
                     </a>
+                </div>
+                
+                <div class="qr-section">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://disk.yandex.ru/d/LlxCKwoC6ohahw" alt="QR-код для скачивания приложения" class="qr-code">
+                    <p class="qr-text">Отсканируйте QR-код для скачивания мобильного приложения</p>
                 </div>
             </div>
         </div>
