@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0d47a1;  /* Темно-синий */
+            --dark-blue: #082e63;      /* Ещё темнее */
+            --light-blue: #4285f4;
+            --aqua-blue: #00838f;     /* Тёмный аквамарин */
+            --accent-blue: #1976d2;    /* Заменили оранжевый на синий акцент */
+            --light-bg: #f0f7ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Шапка */
+        header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .fa-faucet {
+            font-size: 1.8rem;
+            color: var(--light-blue);
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Основной контент */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+        
+        .apps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .app-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-blue);  /* Синий вместо оранжевого */
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+        }
+        
+        .app-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .app-card h2 {
+            color: var(--dark-blue);
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+        }
+        
+        .feature-icon {
+            color: var(--aqua-blue);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(to right, var(--primary-blue), var(--light-blue));
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, var(--light-blue), var(--primary-blue));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+        }
+        
+        .platform-badge {
+            background: var(--accent-blue);  /* Синий вместо оранжевого */
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+        
+        /* Футер */
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .developer-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .apps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .app-card {
+                padding: 1.8rem;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка (хедер) -->
+    <header>
+        <div class="header-content">
+            <h1>
+                <i class="fas fa-faucet"></i> Plumbing
+            </h1>
+            <p>автоматизированный учет сантехнических товаров</p>
+        </div>
+    </header>
+    
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="apps">
+            <div class="app-card">
+                <h2>О приложении</h2>
+                <p>Приложение Plumbing - это удобный инструмент для учета сантехнических товаров.</p>
+                
+                <h3 style="margin-top: 1.5rem; color: var(--dark-blue); margin-bottom: 1rem;">Функциональные возможности:</h3>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <div>Учет товаров в реальном времени</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <div>Синхронизация данных между устройствами</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <div>Добавление, удаление и редактирование товаров</div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle feature-icon"></i>
+                    <div>Фильтрация и сортировка записей</div>
+                </div>
+                
+                <div class="download-buttons">
+                    <a href="#desktop-app" class="btn">
+                        <i class="fas fa-desktop"></i> Скачать для Windows
+                    </a>
+                    <a href="#mobile-app" class="btn">
+                        <i class="fas fa-mobile-alt"></i> Скачать для Android
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="developer-info">
+                <h3>Разработчик:</h3>
+                <p>Пажукова Полина Сергеевна</p>
+                <p>Группа ИС-931</p>
+                
+                <div class="contact-info">
+                    <h3>Контактная информация:</h3>
+                    <p>8-951-577-07-42</p>
+                    <p>Telegram: @poIinkin</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
