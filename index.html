@@ -86,7 +86,7 @@
             width: 100%;
             max-width: 800px;
             transition: all 0.3s ease;
-            border-top: 4px solid var(--accent-blue);  /* Синий вместо оранжевого */
+            border-top: 4px solid var(--accent-blue);
         }
         
         .app-card:hover {
@@ -145,7 +145,7 @@
         }
         
         .platform-badge {
-            background: var(--accent-blue);  /* Синий вместо оранжевого */
+            background: var(--accent-blue);
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
@@ -243,10 +243,10 @@
                 </div>
                 
                 <div class="download-buttons">
-                    <a href="#desktop-app" class="btn">
+                    <a href="#" class="btn" id="downloadBtn">
                         <i class="fas fa-desktop"></i> Скачать для Windows
                     </a>
-                    <a href="#mobile-app" class="btn">
+                    <a href="#" class="btn" id="downloadAndroidBtn">
                         <i class="fas fa-mobile-alt"></i> Скачать для Android
                     </a>
                 </div>
@@ -270,5 +270,48 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Создаем временную ссылку для скачивания
+            const link = document.createElement('a');
+            link.href = 'https://disk.yandex.ru/d/FtYSVc-f0ubb3g';
+            link.target = '_blank';
+            
+            // Пытаемся автоматически скачать (работает не всегда)
+            try {
+                link.download = 'Plumbing.exe';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                // Если не получилось, просто открываем страницу
+                window.open(link.href, '_blank');
+            }
+        });
+
+        // Добавляем обработчик для кнопки скачивания Android
+        document.getElementById('downloadAndroidBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Создаем временную ссылку для скачивания
+            const link = document.createElement('a');
+            link.href = 'https://disk.yandex.ru/d/K2M6Kg4liFEcpQ';
+            link.target = '_blank';
+            
+            // Пытаемся автоматически скачать (работает не всегда)
+            try {
+                link.download = 'Plumbing.apk';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                // Если не получилось, просто открываем страницу
+                window.open(link.href, '_blank');
+            }
+        });
+    </script>
 </body>
 </html>
