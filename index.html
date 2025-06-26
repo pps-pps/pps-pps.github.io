@@ -169,6 +169,7 @@
             background-color: #f8f9fa;
             border-radius: 12px;
             border: 1px solid #e0e0e0;
+            text-align: center;
         }
         
         .qr-code {
@@ -178,6 +179,7 @@
             padding: 10px;
             background: white;
             border-radius: 8px;
+            max-width: 100%;
         }
         
         .qr-text {
@@ -185,6 +187,10 @@
             color: var(--dark-blue);
             font-weight: 500;
             max-width: 250px;
+        }
+        
+        .mobile-qr {
+            display: none;
         }
         
         footer {
@@ -235,6 +241,19 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .desktop-qr {
+                display: none;
+            }
+            
+            .mobile-qr {
+                display: block;
+            }
+            
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -282,8 +301,14 @@
                 </div>
                 
                 <div class="qr-section">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://disk.yandex.ru/d/sr0yTkFCGEi6vA" alt="QR-код для скачивания приложения" class="qr-code">
-                    <p class="qr-text">Отсканируйте QR-код для скачивания мобильного приложения</p>
+                    <div class="desktop-qr">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://disk.yandex.ru/d/sr0yTkFCGEi6vA" alt="QR-код для скачивания приложения" class="qr-code">
+                        <p class="qr-text">Отсканируйте QR-код для скачивания мобильного приложения</p>
+                    </div>
+                    <div class="mobile-qr">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://disk.yandex.ru/d/sr0yTkFCGEi6vA" alt="QR-код для скачивания приложения" class="qr-code">
+                        <p class="qr-text">Наведите камеру на QR-код для скачивания приложения</p>
+                    </div>
                 </div>
             </div>
         </div>
