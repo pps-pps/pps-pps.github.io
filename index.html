@@ -209,6 +209,14 @@
             margin-top: 1.5rem;
         }
         
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
         @media (max-width: 768px) {
             .apps {
                 flex-direction: column;
@@ -236,7 +244,7 @@
             <h1>
                 <i class="fas fa-faucet"></i> Plumbing
             </h1>
-            <p>автоматизированный учет сантехнических товаров</p>
+            <p></p>
         </div>
     </header>
     
@@ -268,13 +276,13 @@
                     <a href="#" class="btn" id="downloadBtn">
                         <i class="fas fa-desktop"></i> Скачать для Windows
                     </a>
-                    <a href="https://disk.yandex.ru/d/LlxCKwoC6ohahw" class="btn" id="downloadAndroidBtn" target="_blank">
+                    <a href="https://disk.yandex.ru/d/sr0yTkFCGEi6vA" class="btn" id="downloadAndroidBtn" target="_blank">
                         <i class="fas fa-mobile-alt"></i> Скачать для Android
                     </a>
                 </div>
                 
                 <div class="qr-section">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://disk.yandex.ru/d/LlxCKwoC6ohahw" alt="QR-код для скачивания приложения" class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://disk.yandex.ru/d/sr0yTkFCGEi6vA" alt="QR-код для скачивания приложения" class="qr-code">
                     <p class="qr-text">Отсканируйте QR-код для скачивания мобильного приложения</p>
                 </div>
             </div>
@@ -294,6 +302,9 @@
                     <p>Telegram: @poIinkin</p>
                 </div>
             </div>
+            <div class="copyright">
+                &copy; 2025 Plumbing. Все права защищены.
+            </div>
         </div>
     </footer>
 
@@ -302,7 +313,7 @@
             e.preventDefault();
             
             const link = document.createElement('a');
-            link.href = 'https://disk.yandex.ru/d/FtYSVc-f0ubb3g';
+            link.href = 'https://disk.yandex.ru/d/rMtrgi0ngZaETQ';
             link.target = '_blank';
             
             try {
